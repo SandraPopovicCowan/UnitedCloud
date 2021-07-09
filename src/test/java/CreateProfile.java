@@ -144,26 +144,32 @@ public class CreateProfile {
     
     js.executeScript("window.scrollBy(0,2000)");
     
-    createProfilePage.clickOnAvatar();
-    
-    js.executeScript("window.scrollBy(0,1000)");
-    
     createProfilePage.enterBirthYear();
     
     js.executeScript("window.scrollBy(0,1000)");
     
-   
-    System.out.println("No. of links: "+ sizeBeforeAddProfile);
-
-    createProfilePage.clickOnCreateProfileButton();
+    createProfilePage.clickOnAvatar();
+ 
     
-    List<WebElement> profileList = driver.findElements(By.tagName("img"));
-    int sizeAfterAddProfile =profileList.size();
+    js.executeScript("window.scrollBy(0,1000)");
     
-    int ExpectedResult = sizeBeforeAddProfile + 1;
-    
-    
-    assertTrue("New profile created", sizeAfterAddProfile==(ExpectedResult));
+//   
+//    System.out.println("No. of links: "+ sizeBeforeAddProfile);
+//
+      createProfilePage.clickOnCreateProfileButton();
+      
+      String actualResult = createProfilePage.getProfileName();
+      
+      assertTrue("New profile created", actualResult.equals(title));
+      
+//    
+//    List<WebElement> profileList = driver.findElements(By.tagName("img"));
+//    int sizeAfterAddProfile =profileList.size();
+//    
+//    int ExpectedResult = sizeBeforeAddProfile + 1;
+//    
+//    
+//    assertTrue("New profile created", sizeAfterAddProfile==(ExpectedResult));
         
     
         
@@ -172,9 +178,32 @@ public class CreateProfile {
     @Test
     public void CreateNewProfileFutureBirthYear() {
         
+        
+          
+    JavascriptExecutor js = (JavascriptExecutor) driver; 
+    
+
+    String title = "Sandra" + new Random().nextInt(1000);
+    createProfilePage.enterNameInputField(title);
+
+    createProfilePage.clickOnEighteenPlusLabel();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+    createProfilePage.enterFutureBirthYear();
+    
+    js.executeScript("window.scrollBy(0,1000)");
+    
+    createProfilePage.clickOnAvatar();
+    
+    js.executeScript("window.scrollBy(0,1000)");
+  
+
+    createProfilePage.clickOnCreateProfileButton();
+    
+    String actualResult = createProfilePage.getProfileName();
+      
+    assertFalse("New profile created", actualResult.equals(title));
+   
     }
-    
-    
-    
-    
 }

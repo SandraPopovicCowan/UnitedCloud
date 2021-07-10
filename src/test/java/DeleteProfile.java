@@ -22,7 +22,6 @@ import pages.LoginPage;
 public class DeleteProfile {
     
     private static WebDriver driver;
-    //private static int sizeBeforeDeleteProfile;
     private static ChooseProfilePage chooseProfilePage;
     private static CreateProfilePage createProfilePage;
     private static DeleteProfilePage deleteProfilePage;
@@ -55,6 +54,7 @@ public class DeleteProfile {
     
     @After
     public void tearDown() {
+        driver.quit();
     }
 
     

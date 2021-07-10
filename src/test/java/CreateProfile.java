@@ -58,9 +58,12 @@ public class CreateProfile {
         
     chooseProfilePage = new ChooseProfilePage(driver);
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-    List<WebElement> profileList = driver.findElements(By.tagName("img"));
-    sizeBeforeAddProfile =profileList.size();
-    chooseProfilePage.clickOnNewProfileButton();
+      
+//    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+//    int profileNumberBeforeAdding = list.size();
+//    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
+//   
+//    chooseProfilePage.clickOnNewProfileButton();
     createProfilePage = new CreateProfilePage(driver);
     
            
@@ -78,6 +81,13 @@ public class CreateProfile {
    
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
+    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberBeforeAdding = list.size();
+    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
+   
+    chooseProfilePage.clickOnNewProfileButton();
+    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+    
 
     String title = "Sandra" + new Random().nextInt(1000);
     createProfilePage.enterNameInputField(title);
@@ -90,42 +100,162 @@ public class CreateProfile {
     
     js.executeScript("window.scrollBy(0,2000)");
     
-   
-  
-    System.out.println("No. of links: "+ sizeBeforeAddProfile);
 
     createProfilePage.clickOnCreateProfileButton();
     
-    List<WebElement> profileList = driver.findElements(By.tagName("img"));
-    int sizeAfterAddProfile =profileList.size();
-    
-    int ExpectedResult = sizeBeforeAddProfile + 1;
+  
+    int profileNumberAfterAddProfile =list.size();
     
     
-    assertTrue("New profile created", sizeAfterAddProfile==(ExpectedResult));
+    int ExpectedResult = profileNumberBeforeAdding + 1;
     
-    //if (sizeAfterAddProfile!=sizeBeforeAddProfile +1) {
-        //System.out.println("New profile not created");
+    
+    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+    
+    if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
+        System.out.println("New profile created");
         
-   // } else { 
-           // System.out.println("New profile created");
-    
-     
-    
+    } else { 
+            System.out.println("New profile not created");
+        }
+
     }
     
     @Test
     public void CreateNewProfileSevenToEleven(){
+        
+           
+    JavascriptExecutor js = (JavascriptExecutor) driver; 
+    
+    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberBeforeAdding = list.size();
+    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
+   
+    chooseProfilePage.clickOnNewProfileButton();
+    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+    
+
+    String title = "Sandra" + new Random().nextInt(1000);
+    createProfilePage.enterNameInputField(title);
+
+    createProfilePage.clickOnSevenToElevenLabel();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+    createProfilePage.clickOnAvatar();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+
+    createProfilePage.clickOnCreateProfileButton();
+    
+  
+    int profileNumberAfterAddProfile =list.size();
+    
+    
+    int ExpectedResult = profileNumberBeforeAdding + 1;
+    
+    
+    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+    
+    if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
+        System.out.println("New profile created");
+        
+    } else { 
+            System.out.println("New profile not created");
+        }
         
     }
     
     @Test
     public void CreateNewProfileTwelveToFourteen(){
         
+           
+    JavascriptExecutor js = (JavascriptExecutor) driver; 
+    
+    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberBeforeAdding = list.size();
+    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
+   
+    chooseProfilePage.clickOnNewProfileButton();
+    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+    
+
+    String title = "Sandra" + new Random().nextInt(1000);
+    createProfilePage.enterNameInputField(title);
+
+    createProfilePage.clickOnTwelveToFourteenLabel();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+    createProfilePage.clickOnAvatar();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+
+    createProfilePage.clickOnCreateProfileButton();
+    
+  
+    int profileNumberAfterAddProfile =list.size();
+    
+    
+    int ExpectedResult = profileNumberBeforeAdding + 1;
+    
+    
+    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+    
+    if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
+        System.out.println("New profile created");
+        
+    } else { 
+            System.out.println("New profile not created");
+        }
+        
     }
     
     @Test
     public void CreateNewProfileFifteenToSeventeen(){
+        
+           
+    JavascriptExecutor js = (JavascriptExecutor) driver; 
+    
+    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberBeforeAdding = list.size();
+    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
+   
+    chooseProfilePage.clickOnNewProfileButton();
+    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+    
+
+    String title = "Sandra" + new Random().nextInt(1000);
+    createProfilePage.enterNameInputField(title);
+
+    createProfilePage.clickOnFifteenToSeventeenLabel();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+    createProfilePage.clickOnAvatar();
+    
+    js.executeScript("window.scrollBy(0,2000)");
+    
+
+    createProfilePage.clickOnCreateProfileButton();
+    
+  
+    int profileNumberAfterAddProfile =list.size();
+    
+    
+    int ExpectedResult = profileNumberBeforeAdding + 1;
+    
+    
+    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+    
+    if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
+        System.out.println("New profile created");
+        
+    } else { 
+            System.out.println("New profile not created");
+        }
         
     }
     
@@ -133,9 +263,14 @@ public class CreateProfile {
     public void CreateNewProfileEighteenPlus() {
         
    
-    
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
+    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberBeforeAdding = list.size();
+    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
+   
+    chooseProfilePage.clickOnNewProfileButton();
+    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 
     String title = "Sandra" + new Random().nextInt(1000);
     createProfilePage.enterNameInputField(title);
@@ -152,11 +287,8 @@ public class CreateProfile {
  
     
     js.executeScript("window.scrollBy(0,1000)");
-    
-//   
-//    System.out.println("No. of links: "+ sizeBeforeAddProfile);
-//
-      createProfilePage.clickOnCreateProfileButton();
+
+    createProfilePage.clickOnCreateProfileButton();
       
       String actualResult = createProfilePage.getProfileName();
       

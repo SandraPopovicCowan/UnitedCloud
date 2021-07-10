@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: DeleteProfile
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.115 sec <<< FAILURE!
-deleteProfile(DeleteProfile)  Time elapsed: 1.714 sec  <<< ERROR!
-org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <img data-v-4d17199c="" alt="Avatar image" src="https://images-web.int-green.ug.cdn.united.cloud/2020/06/01/18/28/20/996915_profile_l.png" class="profiles__profile-avatar"> is not clickable at point (303, 329). Other element would receive the click: <img data-v-4d17199c="" alt="Avatar image" src="https://images-web.int-green.ug.cdn.united.cloud/2020/06/01/18/27/45/84581_family_l.png" class="profiles__profile-avatar">
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.687 sec <<< FAILURE!
+deleteProfile(DeleteProfile)  Time elapsed: 1.786 sec  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <img data-v-4d17199c="" alt="Avatar image" src="https://images-web.int-green.ug.cdn.united.cloud/2020/06/01/18/27/45/84581_family_l.png" class="profiles__profile-avatar"> is not clickable at point (135, 330). Other element would receive the click: <div data-v-4d17199c="" class="choose">...</div>
   (Session info: chrome=91.0.4472.114)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'Sandras-MacBook-Pro.local', ip: 'fe80:0:0:0:1846:c4ad:2978:328b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: /var/folders/lj/6j5q3krx04q...}, goog:chromeOptions: {debuggerAddress: localhost:62834}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6d66cb2dbefb04814f99694a820b1b1a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: /var/folders/lj/6j5q3krx04q...}, goog:chromeOptions: {debuggerAddress: localhost:55069}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d170cf788dd686e5d2d03cfcc397c470
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)

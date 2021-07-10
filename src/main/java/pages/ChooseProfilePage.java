@@ -24,14 +24,15 @@ import org.openqa.selenium.WebDriver;
     
     private By avatarOnChooseProfilePage = By.xpath("//*[@id=\"app\"]/div/div/div[1]/div[2]/div/img");
     
+    
+    
+    //private By avatarOnChooseProfilePage = By.cssSelector("img[alt^='Avatar']");
    // private By createNewProfileButton = By.xpath("//*[text()=‘Create new profile’]");
     //private By avatar = By.cssSelector("img[alt*='Avatar'][alt*='image']");
-    
+    //private By avatar = By.cssSelector("img[alt^='Avatar']");
     //private By avatar = By.cssSelector("img[alt='Avatar image'");
     
-//    //public void clickOnAvatar () {
-//        driver.findElement(avatar).click();
-//    }
+
      
     public void clickOnNewProfileButton() {
         driver.findElement(createNewProfileButton).click();

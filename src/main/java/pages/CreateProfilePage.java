@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
         this.driver = driver;
     }
     
-    private By createNewProfileButton = By.className("button--primary");
+    //private By createNewProfileButton = By.className("button--primary");
     private By homeHeaderButton = By.className("header__button");
     private By nameInputField = By.id("profile-name");
     private By zeroToSixAge = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[2]/div/div[1]/label");
@@ -21,15 +21,16 @@ import org.openqa.selenium.WebDriver;
     private By twelveToFourteenAge = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[2]/div/div[3]/label");
     private By fifteenToSeventeeAge = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[2]/div/div[4]/label");
     private By eighteenPlusAge = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[2]/div/div[5]/label");
-    private By enterBirthYear = By.className("input-wrapper__label");
+    //private By enterBirthYear = By.className("input-wrapper__label");
+    private By enterBirthYear = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[2]/div[2]/label");
     private By submitProfileButton = By.xpath("//*[@id=\"app\"]/div/div/div/form/button");
     //private By avatar = By.xpath("//img[@alt='Avatar']");
-    private By avatar = By.xpath("//html/body/div/div/div/div/form/div[3]/div/div[6]/label/div/img");
-    private By profileName = By.className("card__profile-name");
+    private By avatar = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[3]/div/div[1]/label/div/img");
+  //  private By profileName = By.className("card__profile-name");
     
-    public void clickOnCreateNewProfileButton() {
-        driver.findElement(createNewProfileButton).click();
-    }
+//    public void clickOnCreateNewProfileButton() {
+//        driver.findElement(createNewProfileButton).click();
+//    }
     public void clickOnHomeHeaderButton() {
         driver.findElement(homeHeaderButton).click();
     }
@@ -74,9 +75,9 @@ import org.openqa.selenium.WebDriver;
         driver.findElement(avatar).click();
     }
     
-    public String getProfileName() {
-       return  driver.findElement(profileName).getText();
-    }
+//    public String getProfileName() {
+//       return  driver.findElement(profileName).getText();
+//    }
  
     
     

@@ -18,6 +18,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.ChooseProfilePage;
 import pages.CreateProfilePage;
 import pages.LoginPage;
@@ -29,6 +31,7 @@ import pages.LoginPage;
 public class CreateProfile {
     
     private static WebDriver driver;
+    private static WebDriverWait wait;
     private static int sizeBeforeAddProfile;
     private static ChooseProfilePage chooseProfilePage;
     private static CreateProfilePage createProfilePage;
@@ -40,6 +43,7 @@ public class CreateProfile {
     public static void setUpClass() {
         
     driver = new ChromeDriver();
+    wait = new WebDriverWait(driver,5);
     driver.get("https://qa-interview.united.cloud/");
     driver.manage().window().maximize();
     LoginPage loginPage = new LoginPage(driver);
@@ -96,6 +100,9 @@ public class CreateProfile {
     
     js.executeScript("window.scrollBy(0,2000)");
     
+    
+    
+   // wait.until(ExpectedConditions.avatarToBeClickable(By.xpath("//*[@id=\"app\"]/div/div/div/form/div[3]/div/div[1]/label/div/img"));
     createProfilePage.clickOnAvatar();
     
     js.executeScript("window.scrollBy(0,2000)");

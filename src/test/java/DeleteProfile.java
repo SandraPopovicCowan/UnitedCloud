@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ChooseProfilePage;
 import pages.CreateProfilePage;
+import pages.DeleteProfilePage;
 import pages.LoginPage;
 
 
@@ -23,6 +24,7 @@ public class DeleteProfile {
     //private static int sizeBeforeDeleteProfile;
     private static ChooseProfilePage chooseProfilePage;
     private static CreateProfilePage createProfilePage;
+    private static DeleteProfilePage deleteProfilePage;
     
     
     public DeleteProfile() {
@@ -60,17 +62,32 @@ public class DeleteProfile {
     public void deleteProfile() {
     chooseProfilePage = new ChooseProfilePage(driver);
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-    List<WebElement> profileList = driver.findElements(By.tagName("img"));
-    int i=0;
-        for (WebElement Element : profileList) {
-            i = i+3;
-           
+   
+    
+    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberBeforeDelete = list.size();
+    System.out.println("Number of profiles: " + profileNumberBeforeDelete);
+    
+    chooseProfilePage.clickOnAvatarOnChooseProfilePage();
+    deleteProfilePage.clickOnDeleteButton();
+    
+    String expectedUrl = "https://qa-interview.united.cloud/choose-profile";
+    String actualUrl = driver.getCurrentUrl();
+        
+    assertTrue("URL does not match", expectedUrl.equals(actualUrl));
+    
+    int actualProfileNumberAfterDelete = list.size();
+    int expectedProfileNumberAfterDelete = profileNumberBeforeDelete - 1;
+    
+    if (actualProfileNumberAfterDelete == expectedProfileNumberAfterDelete) {
+        System.out.println("Profile has been deleted.");
+    } else {
+        System.out.println("Profile has not been deleted.");
+    }
 
-            
-        }
-        System.out.println("total objects founds " + i);
-    //int sizeBeforeAddProfile =profileList.size();
-    //System.out.println("Number of profiles: " + sizeBeforeAddProfile);
+//         
+//    int sizeBeforeAddProfile =profileList.size();
+//    System.out.println("Number of profiles: " + sizeBeforeAddProfile);
     //chooseProfilePage.clickOnNewProfileButton();
     //createProfilePage = new CreateProfilePage(driver);
      

@@ -22,6 +22,8 @@ import org.openqa.selenium.WebDriver;
     
     private By createNewProfileButton = By.xpath("/html/body/div/div/div/div[2]/button");
     
+    private By avatarOnChooseProfilePage = By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div");
+    
    // private By createNewProfileButton = By.xpath("//*[text()=‘Create new profile’]");
     //private By avatar = By.cssSelector("img[alt*='Avatar'][alt*='image']");
     
@@ -33,6 +35,10 @@ import org.openqa.selenium.WebDriver;
      
     public void clickOnNewProfileButton() {
         driver.findElement(createNewProfileButton).click();
+    }
+    
+    public void clickOnAvatarOnChooseProfilePage () {
+        driver.findElement(avatarOnChooseProfilePage).click();
     }
      
      

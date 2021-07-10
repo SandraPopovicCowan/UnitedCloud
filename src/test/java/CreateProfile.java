@@ -50,7 +50,6 @@ public class CreateProfile {
     loginPage.enterLoginUsername("sandra.popovic");
     loginPage.enterPassword("Lozinka123");
     loginPage.clickOnLoginButton();
-   
     }
     
     @AfterClass
@@ -63,15 +62,7 @@ public class CreateProfile {
         
     chooseProfilePage = new ChooseProfilePage(driver);
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-      
-//    List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
-//    int profileNumberBeforeAdding = list.size();
-//    System.out.println("Number of profiles: " + profileNumberBeforeAdding);
-//   
-//    chooseProfilePage.clickOnNewProfileButton();
     createProfilePage = new CreateProfilePage(driver);
-    
-           
     }
     
     @After
@@ -125,8 +116,7 @@ public class CreateProfile {
     
     @Test
     public void CreateNewProfileSevenToEleven(){
-        
-           
+               
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
     List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
@@ -152,11 +142,9 @@ public class CreateProfile {
     
     List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
     int profileNumberAfterAddProfile =list1.size();
-    
-    
+   
     int ExpectedResult = profileNumberBeforeAdding + 1;
-    
-    
+       
     //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
     
     if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
@@ -170,8 +158,7 @@ public class CreateProfile {
     
     @Test
     public void CreateNewProfileTwelveToFourteen(){
-        
-           
+     
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
     List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));

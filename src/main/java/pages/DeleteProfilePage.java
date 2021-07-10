@@ -11,7 +11,6 @@ public class DeleteProfilePage {
       
     public DeleteProfilePage (WebDriver driver) {
             this.driver = driver;
-
 }
         
     private By deleteButton = By.xpath("//*[@id=\"app\"]/div/div/div/div/div[2]/button[1]"); 
@@ -21,8 +20,7 @@ public class DeleteProfilePage {
     public void clickOnDeleteButton () {
         driver.findElement(deleteButton).click();
     }
-        
-        
+ 
 }
 
 

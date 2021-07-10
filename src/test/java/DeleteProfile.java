@@ -44,6 +44,7 @@ public class DeleteProfile {
     
     @AfterClass
     public static void tearDownClass() {
+        driver.quit();
     }
     
     @Before
@@ -54,7 +55,7 @@ public class DeleteProfile {
     
     @After
     public void tearDown() {
-        driver.quit();
+        
     }
 
     
@@ -81,14 +82,15 @@ public class DeleteProfile {
         
     assertTrue("URL does not match", expectedUrl.equals(actualUrl));
     
-    int actualProfileNumberAfterDelete = list.size();
+    List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int actualProfileNumberAfterDelete = list1.size();
     int expectedProfileNumberAfterDelete = profileNumberBeforeDelete - 1;
     
     if (actualProfileNumberAfterDelete == expectedProfileNumberAfterDelete) {
         System.out.println("Profile has been deleted.");
     } else {
         System.out.println("Profile has not been deleted.");
-    }
+        }
      
-     }
+    }
 }

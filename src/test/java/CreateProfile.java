@@ -55,6 +55,7 @@ public class CreateProfile {
     
     @AfterClass
     public static void tearDownClass() {
+         driver.quit();
     }
     
     @Before
@@ -75,14 +76,13 @@ public class CreateProfile {
     
     @After
     public void tearDown() {
-        //driver.quit();
+       
     }
 
 
     @Test
     public void CreateNewProfileZeroToSix() {
-        
-   
+    
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
     List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
@@ -92,31 +92,26 @@ public class CreateProfile {
     chooseProfilePage.clickOnNewProfileButton();
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
     
-
     String title = "Sandra" + new Random().nextInt(1000);
     createProfilePage.enterNameInputField(title);
 
     createProfilePage.clickOnZeroToSixLabel();
     
     js.executeScript("window.scrollBy(0,2000)");
-    
-    
-    
+   
    // wait.until(ExpectedConditions.avatarToBeClickable(By.xpath("//*[@id=\"app\"]/div/div/div/form/div[3]/div/div[1]/label/div/img"));
     createProfilePage.clickOnAvatar();
     
     js.executeScript("window.scrollBy(0,2000)");
     
-
     createProfilePage.clickOnCreateProfileButton();
+    createProfilePage.clickOnChooseProfileButton();
     
-  
-    int profileNumberAfterAddProfile =list.size();
-    
-    
+    List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberAfterAddProfile =list1.size();
+   
     int ExpectedResult = profileNumberBeforeAdding + 1;
-    
-    
+      
     //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
     
     if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
@@ -140,8 +135,7 @@ public class CreateProfile {
    
     chooseProfilePage.clickOnNewProfileButton();
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-    
-
+ 
     String title = "Sandra" + new Random().nextInt(1000);
     createProfilePage.enterNameInputField(title);
 
@@ -153,11 +147,11 @@ public class CreateProfile {
     
     js.executeScript("window.scrollBy(0,2000)");
     
-
     createProfilePage.clickOnCreateProfileButton();
+    createProfilePage.clickOnChooseProfileButton();
     
-  
-    int profileNumberAfterAddProfile =list.size();
+    List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberAfterAddProfile =list1.size();
     
     
     int ExpectedResult = profileNumberBeforeAdding + 1;
@@ -186,11 +180,8 @@ public class CreateProfile {
    
     chooseProfilePage.clickOnNewProfileButton();
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
-    
-
     String title = "Sandra" + new Random().nextInt(1000);
     createProfilePage.enterNameInputField(title);
-
     createProfilePage.clickOnTwelveToFourteenLabel();
     
     js.executeScript("window.scrollBy(0,2000)");
@@ -199,17 +190,16 @@ public class CreateProfile {
     
     js.executeScript("window.scrollBy(0,2000)");
     
-
     createProfilePage.clickOnCreateProfileButton();
+    createProfilePage.clickOnChooseProfileButton();
     
-  
-    int profileNumberAfterAddProfile =list.size();
+    List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberAfterAddProfile =list1.size();
     
     
     int ExpectedResult = profileNumberBeforeAdding + 1;
-    
-    
-    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+ 
+    //assertTrue("New profile not created", profileNumberAfterAddProfile==(ExpectedResult));
     
     if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
         System.out.println("New profile created");
@@ -222,8 +212,7 @@ public class CreateProfile {
     
     @Test
     public void CreateNewProfileFifteenToSeventeen(){
-        
-           
+             
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
     List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
@@ -233,7 +222,6 @@ public class CreateProfile {
     chooseProfilePage.clickOnNewProfileButton();
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
     
-
     String title = "Sandra" + new Random().nextInt(1000);
     createProfilePage.enterNameInputField(title);
 
@@ -244,18 +232,16 @@ public class CreateProfile {
     createProfilePage.clickOnAvatar();
     
     js.executeScript("window.scrollBy(0,2000)");
-    
 
     createProfilePage.clickOnCreateProfileButton();
-    
-  
-    int profileNumberAfterAddProfile =list.size();
-    
-    
+    createProfilePage.clickOnChooseProfileButton();
+ 
+    List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberAfterAddProfile =list1.size();
+        
     int ExpectedResult = profileNumberBeforeAdding + 1;
-    
-    
-    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+
+    //assertTrue("New profile not created", profileNumberAfterAddProfile==(ExpectedResult));
     
     if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
         System.out.println("New profile created");
@@ -268,8 +254,7 @@ public class CreateProfile {
     
     @Test
     public void CreateNewProfileEighteenPlus() {
-        
-   
+ 
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
     List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
@@ -292,18 +277,17 @@ public class CreateProfile {
     
     createProfilePage.clickOnAvatar();
  
-    
     js.executeScript("window.scrollBy(0,1000)");
 
     createProfilePage.clickOnCreateProfileButton();
+    createProfilePage.clickOnChooseProfileButton();
       
-     int profileNumberAfterAddProfile =list.size();
-    
-    
+    List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='profiles']/div"));
+    int profileNumberAfterAddProfile =list1.size();
+        
     int ExpectedResult = profileNumberBeforeAdding + 1;
-    
-    
-    //assertTrue("New profile created", profileNumberAfterAddProfile==(ExpectedResult));
+      
+    //assertTrue("New profile not created", profileNumberAfterAddProfile==(ExpectedResult));
     
     if (profileNumberAfterAddProfile==profileNumberBeforeAdding +1) {
         System.out.println("New profile created");
@@ -317,8 +301,7 @@ public class CreateProfile {
     @Test
     public void CreateNewProfileFutureBirthYear() {
         
-        
-          
+     
     JavascriptExecutor js = (JavascriptExecutor) driver; 
     
     List<WebElement> list = driver.findElements(By.xpath("//div[@class='profiles']/div"));
@@ -343,10 +326,9 @@ public class CreateProfile {
     
     js.executeScript("window.scrollBy(0,1000)");
   
-
     createProfilePage.clickOnCreateProfileButton();
-    
-    
+    createProfilePage.clickOnChooseProfileButton();
+       
     String expectedUrl = "https://qa-interview.united.cloud/create-profile";
     String actualUrl = driver.getCurrentUrl();
         

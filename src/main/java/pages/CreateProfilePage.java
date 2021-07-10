@@ -26,6 +26,7 @@ import org.openqa.selenium.WebDriver;
     private By submitProfileButton = By.xpath("//*[@id=\"app\"]/div/div/div/form/button");
     //private By avatar = By.xpath("//img[@alt='Avatar']");
     private By avatar = By.xpath("//*[@id=\"app\"]/div/div/div/form/div[3]/div/div[1]/label/div/img");
+    private By chooseProfileButton = By.xpath(("//*[@id=\"app\"]/div/div/header/div/button[2]"));
   //  private By profileName = By.className("card__profile-name");
     
 //    public void clickOnCreateNewProfileButton() {
@@ -34,8 +35,6 @@ import org.openqa.selenium.WebDriver;
     public void clickOnHomeHeaderButton() {
         driver.findElement(homeHeaderButton).click();
     }
-    
-    
     public void enterNameInputField(String title) {
         driver.findElement(nameInputField).sendKeys(title);
     }
@@ -54,25 +53,25 @@ import org.openqa.selenium.WebDriver;
     public void clickOnEighteenPlusLabel() {
         driver.findElement(eighteenPlusAge).click();
     }
-
     int birthYear = 1900 + new Random().nextInt(104);
     public void enterBirthYear() {
            driver.findElement(enterBirthYear).click();
            driver.findElement(enterBirthYear).sendKeys(Integer.toString(birthYear));
        }
-    
     int futureBirthYear = 2021 + new Random().nextInt(10);
     public void enterFutureBirthYear() {
         driver.findElement(enterBirthYear).click();
         driver.findElement(enterBirthYear).sendKeys(Integer.toString(futureBirthYear));
     }
-   
     public void clickOnCreateProfileButton () {
         driver.findElement(submitProfileButton).click();
     }
     
     public void clickOnAvatar () {
         driver.findElement(avatar).click();
+    }
+    public void clickOnChooseProfileButton () {
+        driver.findElement(chooseProfileButton);
     }
     
 //    public String getProfileName() {

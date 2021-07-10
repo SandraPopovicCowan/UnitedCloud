@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -60,6 +61,8 @@ public class DeleteProfile {
   
     @Test
     public void deleteProfile() {
+        
+    JavascriptExecutor js = (JavascriptExecutor) driver; 
     chooseProfilePage = new ChooseProfilePage(driver);
     driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
    
@@ -69,6 +72,8 @@ public class DeleteProfile {
     System.out.println("Number of profiles: " + profileNumberBeforeDelete);
     
     chooseProfilePage.clickOnAvatarOnChooseProfilePage();
+    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+    js.executeScript("window.scrollBy(0,2000)");
     deleteProfilePage.clickOnDeleteButton();
     
     String expectedUrl = "https://qa-interview.united.cloud/choose-profile";
@@ -84,13 +89,6 @@ public class DeleteProfile {
     } else {
         System.out.println("Profile has not been deleted.");
     }
-
-//         
-//    int sizeBeforeAddProfile =profileList.size();
-//    System.out.println("Number of profiles: " + sizeBeforeAddProfile);
-    //chooseProfilePage.clickOnNewProfileButton();
-    //createProfilePage = new CreateProfilePage(driver);
-     
      
      }
 }

@@ -14,8 +14,7 @@ public class DeleteProfilePage {
 
 }
         
-    private By deleteButton = By.className("button--delete"); 
-    //private By avatarPicture = By.xpath ("//*[@id=\"app\"]/div/div/div[1]/div/div/img");
+    private By deleteButton = By.xpath("//*[@id=\"app\"]/div/div/div/div/div[2]/button[1]"); 
     private By chooseProfileButton = By.xpath("//*[text()='Choose profile']");
    
     
